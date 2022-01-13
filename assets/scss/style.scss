@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+$primary1: hsl(179, 53%, 51%); //Cyan
+$primary2: hsl(71, 73%, 54%); //Bright Yellow
+
+$neutral1: hsl(204, 43%, 93%); //Light Gray
+$neutral2: hsl(218, 22%, 67%); //Grayish Blue
+
+$defaultFont: 'Karla', sans-serif; //weights: 400, 700
+$defaultFontSize: 0.9375rem;
+
+
+@mixin fontSettings($fontSize: $defaultFontSize, $fontWeight: 400, $fontColor: $neutral2) {
+    @extend %defaultFontSettings;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $fontColor;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $neutral1;
+}
+
+%defaultFontSettings {
+    font-family: $defaultFont;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+#showcase {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+#card {
+    margin: 30px 0px;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0px 20px 40px 10px $neutral2;
+    overflow: hidden;
+
+    display: grid;
+
+    div {
+        padding: 20px; 
+    }
+}
+
+#infoContainer {
+    background-color: white;
+
+    h2 {
+        @include fontSettings(1.3rem, 700, $primary1);
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        @include fontSettings($fontColor: $primary2);
+    }
+    p {
+        @include fontSettings;
+        line-height: 20px;
+    }
+}
+
+#priceContainer {
+    background-color: $primary1;
+
+    display: grid;
+    grid-template-columns: 100px;
+    align-items: center;
+
+    h3 {
+        @include fontSettings(1.3rem, 700, $neutral1);
+        margin-bottom: 20px;
+        grid-column: 1/3;
+    }
+
+    span{
+        &:nth-child(2) {
+            @include fontSettings(3rem, 700, white);
+        }
+        &:nth-child(3) {
+            @include fontSettings($fontColor: $neutral1);
+            text-align: left;
+        }
+        &:nth-child(4) {
+            @include fontSettings($fontSize: 1rem, $fontColor: $neutral1);
+            grid-column: 1/3;
+        }
+    }
+
+    #signup {
+        margin-top: 30px;
+        grid-column: 1/3;
+        background-color: $primary2;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.155);
+
+        text-align: center;
+        a {
+            @include fontSettings($fontColor: white);
+            text-decoration: none;
+        }
+    }
+}
+
+#pitchContainer {
+    background-color: hsl(179, 47%, 52%);
+
+    h3 {
+        @include fontSettings(1.3rem, 700, $neutral1);
+    }
+    ul{
+        @include fontSettings($fontColor: $neutral1);
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    #card {
+        max-width: 700px;
+
+        grid-template-columns: 1fr 1fr;
+    }
+    #infoContainer {
+        grid-column: 1/3;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

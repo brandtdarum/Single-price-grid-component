@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5eff5;
+}
+
+#pitchContainer ul, #pitchContainer h3, #priceContainer #signup a, #priceContainer span:nth-child(4), #priceContainer span:nth-child(3), #priceContainer span:nth-child(2), #priceContainer h3, #infoContainer p, #infoContainer h3, #infoContainer h2 {
+  font-family: "Karla", sans-serif;
+}
+
+h2, h3 {
+  margin: 0;
+}
+
+#showcase {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#card {
+  margin: 30px 0px;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 0px 20px 40px 10px #98a6bd;
+  overflow: hidden;
+  display: grid;
+}
+#card div {
+  padding: 20px;
+}
+
+#infoContainer {
+  background-color: white;
+}
+#infoContainer h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #40c4c2;
+  margin-bottom: 20px;
+}
+#infoContainer h3 {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #c0df34;
+}
+#infoContainer p {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #98a6bd;
+  line-height: 20px;
+}
+
+#priceContainer {
+  background-color: #40c4c2;
+  display: grid;
+  grid-template-columns: 100px;
+  align-items: center;
+}
+#priceContainer h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e5eff5;
+  margin-bottom: 20px;
+  grid-column: 1/3;
+}
+#priceContainer span:nth-child(2) {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+}
+#priceContainer span:nth-child(3) {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #e5eff5;
+  text-align: left;
+}
+#priceContainer span:nth-child(4) {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #e5eff5;
+  grid-column: 1/3;
+}
+#priceContainer #signup {
+  margin-top: 30px;
+  grid-column: 1/3;
+  background-color: #c0df34;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.155);
+  text-align: center;
+}
+#priceContainer #signup a {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+#pitchContainer {
+  background-color: #4bbebc;
+}
+#pitchContainer h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e5eff5;
+}
+#pitchContainer ul {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #e5eff5;
+  list-style: none;
+  padding-left: 0;
+}
+
+@media only screen and (min-width: 560px) {
+  #card {
+    max-width: 700px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #infoContainer {
+    grid-column: 1/3;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/*# sourceMappingURL=style.css.map */
